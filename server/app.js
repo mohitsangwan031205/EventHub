@@ -4,7 +4,7 @@ const userRoutes = require("./routes/userRoutes");
 
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
-const User = require("./models/User");
+const User = require("./models/user");
 const cors = require("cors");
 const eventRoutes = require("./routes/eventRoutes");
 const mediaRoutes = require("./routes/mediaRoutes");
