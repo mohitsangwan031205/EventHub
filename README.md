@@ -8,9 +8,7 @@
 
 📂 GitHub Repository: https://github.com/mohitsangwan031205/EventHub
 
-Dummy Credentials (Use for login)
-username - dummy@gmail.com
-password - 1234
+Dummy Credentials (Use for login) -> username - dummy@gmail.com , password - 1234
 
 ---
 
