@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/events";
+const BASE_URL = import.meta.env.VITE_API_URL;
+const API_URL = `${BASE_URL}/api/events`;
 
 export const getEvents = async () => {
   const response = await axios.get(API_URL);
@@ -54,7 +55,7 @@ export const getEventMedia = async (eventId) => {
   const token = localStorage.getItem("token");
 
   const response = await axios.get(
-    `http://localhost:5000/api/media/event/${eventId}`,
+    `${BASE_URL}/api/media/event/${eventId}`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -79,7 +80,7 @@ export const uploadMedia = async (eventId, imageFiles, visibility) => {
   formData.append("visibility", visibility);
 
   const response = await axios.post(
-    "http://localhost:5000/api/media/upload",
+    `${BASE_URL}/api/media/upload`,
     formData,
     {
       headers: {
@@ -95,7 +96,7 @@ export const deleteMedia = async (mediaId) => {
   const token = localStorage.getItem("token");
 
   const response = await axios.delete(
-    `http://localhost:5000/api/media/${mediaId}`,
+    `${BASE_URL}/api/media/${mediaId}`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -110,7 +111,7 @@ export const bulkDeleteMedia = async (mediaIds) => {
   const token = localStorage.getItem("token");
 
   const response = await axios.delete(
-    "http://localhost:5000/api/media/bulk-delete",
+    `${BASE_URL}/api/media/bulk-delete`,
     {
       headers: {
         Authorization: `Bearer ${token}`,

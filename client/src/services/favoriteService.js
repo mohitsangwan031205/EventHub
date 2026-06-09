@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/favorites";
+const BASE_URL = import.meta.env.VITE_API_URL;
+const API_URL = `${BASE_URL}/api/favorites`;
 
 export const toggleFavorite = async (mediaId) => {
   const token = localStorage.getItem("token");
@@ -36,7 +37,7 @@ export const getMyFavorites = async () => {
   const token = localStorage.getItem("token");
 
   const response = await axios.get(
-    "http://localhost:5000/api/favorites/my-favorites",
+    `${BASE_URL}/api/favorites/my-favorites`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
